@@ -98,6 +98,11 @@ export class HomeComponent {
     }));
   }
 
+  /**
+   * Updates the text of a task at the specified index.
+   * @param index - The index of the task to update.
+   * @param event - The event object triggered by the input element.
+   */
   updateTaskText( index: number, event: Event ) {
     const input = event.target as HTMLInputElement;
     this.tasks.update(( tasks ) => tasks.map(( task, position ) => {
@@ -112,9 +117,16 @@ export class HomeComponent {
     }));
   }
 
+  /**
+   * Filters the tasks based on the specified filter.
+   * @param filter - The filter to apply. Can be 'all', 'pending', or 'completed'.
+   */
   filterTasks( filter: 'all' | 'pending' | 'completed' ) {
     this.filter.update(() => filter);
   }
 
+  clearComplete() {
+    console.log('Cleared complete tasks');
+  }
 
 }
